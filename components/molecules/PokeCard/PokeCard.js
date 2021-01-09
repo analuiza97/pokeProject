@@ -12,7 +12,8 @@ export const PokeCard = () => {
       <CardTitle>
         <h1>Venossauro</h1>
         <TypesHolder>
-          <TypeLabel></TypeLabel>
+          <TypeLabel/>
+          <TypeLabel/>
         </TypesHolder>
       </CardTitle>
     </PokeCardWrapper>

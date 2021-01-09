@@ -25,4 +25,10 @@ export const TypesHolder = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    div {
+        flex: 1;
+        :last-child {
+            margin-left: 10px;
+        } 
+    }
 `;

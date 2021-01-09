@@ -4,7 +4,7 @@ import { TypeWrapper } from "./style";
 export const TypeLabel = ({ type }) => {
   return (
     <TypeWrapper color="pink" background="blue">
-      {type || "Pokemon Natural"}
+      {type || "Natural"}
     </TypeWrapper>
   );
 };
