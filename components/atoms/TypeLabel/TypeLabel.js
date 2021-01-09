@@ -1,9 +1,6 @@
-import React from 'react'
+import React from "react";
+import { TypeWrapper } from "./style";
 
-export const TypeLabel = () => {
-    return (
-        <div>
-            Ooooi
-        </div>
-    )
-}
+export const TypeLabel = ({ type }) => {
+  return <TypeWrapper color="pink" background="blue">{ type || "Pokemon Natural"}</TypeWrapper>;
+};
