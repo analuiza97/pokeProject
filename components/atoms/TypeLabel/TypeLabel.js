@@ -1,10 +1,8 @@
 import React from "react";
 import { TypeWrapper } from "./style";
 
-export const TypeLabel = ({ type }) => {
-  return (
-    <TypeWrapper color="pink" background="blue">
-      {type || "Natural"}
+export const TypeLabel = ({ props }) => {
+  return
+    <TypeWrapper {...props}>{props.type || "Natural"}
     </TypeWrapper>
-  );
 };
