@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { PokeCardWrapper, ImageHolder, CardTitle, TypesHolder } from "./style";
 import { TypeLabel } from "../../atoms/TypeLabel";
+import { getPokemonByUrl } from "../../../utils/api/PokemonApi";
 
-export const PokeCard = () => {
+export const PokeCard = ({ pokemon }) => {
+  const [pokeData, setPokeData] = useState({ name: pokemon.name });
+
+  useEffect(() => {
+    getPokemonByUrl(pokemon.url).then((data) => setPokeData(data.data));
+  }, []);
+
   return (
     <PokeCardWrapper>
       <ImageHolder>
-        <img src="" alt="" />{" "}
+        <img src={pokeData.sprites.front_default} alt={pokeData.name} />
       </ImageHolder>
-      <h6>N° 003</h6>
+      <h6>Nº {pokeData.id}</h6>
       <CardTitle>
-        <h1>Venossauro</h1>
+        <h1>{pokeData.name}</h1>
         <TypesHolder>
-          <TypeLabel/>
-          <TypeLabel/>
+          {pokeData.types.map((element) => {
+            const { name } = element.type;
+            return <TypeLabel type={name} background="red" color="qweqew" />;
+          })}
         </TypesHolder>
       </CardTitle>
     </PokeCardWrapper>

@@ -5,6 +5,7 @@ export const PokeCardWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    width: 25%
 `;
 
 export const ImageHolder = styled.div`
