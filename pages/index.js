@@ -1,12 +1,13 @@
-import React from 'react'
-//import { TypeLabel } from '../components/atoms/TypeLabel'
-import { PokeCard } from '../components/molecules/PokeCard'
+import React from "react";
+import { PokeList } from "../components/organism/PokeList";
+import usePokemon from "../hooks/usePokemon";
 
 export default function index() {
-    return (
-        <div>
-            {/* <TypeLabel type="fogo"/> */}
-            <PokeCard type="Fogo"/>
-        </div>
-    )
+  const { PokemonList } = usePokemon();
+
+  return (
+    <div>
+      <PokeList PokemonsArray={PokemonList} />
+    </div>
+  );
 }
